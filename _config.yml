@@ -1,0 +1,306 @@
+# Config
+# ========================================================================================
+
+# IMPORTANT: Set the URL of your page.
+# Set to https://<username>.github.io when hosting on GitHub Pages
+# (unless you are using a custom domain).
+url:                 https://p-mckenzie.github.io/
+
+# IMPORTANT: Set The "base URL" of your site.
+#
+# When hosting your site in a subdirectory of a server, set to /<name of directory>
+# (with leading /, but without the < >)
+# Use the empty string '' otherwise.
+#
+# When using GitHub Pages, set to '' when hosting a user- or organization page,
+# i.e. when the name of the repository looks like <username>.github.io.
+# Otherwise, set to /<name of repository> (with leading /, but without the < >).
+baseurl:               ''
+
+# Language of your content in 2-letter code, e.g.: en, de.
+# You may also provide a location, e.g.: en-us, de_AT.
+lang:                  en
+
+# The title of your blog. Used in the sidebar and the browser tab.
+title:                 Paige McKenzie
+
+# A short description (~150 chars) of the page used for the meta description tag.
+# Can use markdown, but no more than one paragraph (enforced by `>`)
+description:           >
+  A collection of data science projects
+  by a recent graduate from UT Austin.
+
+# A shorter description for the sidebar.
+tagline:               >
+  A collection of data science projects
+  by a recent graduate from UT Austin.
+
+# description used in About page
+why:               >
+  I believe the best way to learn something new is just to try it. 
+  <br><br>
+  This website is a record of personal projects I have undertaken,
+  each with the goal of learning a new package, trying a new algorithm, or using a new API.
+  Creating these posts helps motivate me to better document/comment my code, and to make my analyses repeatable.
+# A list of keywords for your blog
+keywords:              [data, science, MSBA, UT, Austin, McCombs, Paige, McKenzie]
+
+# Used by jekyll-seo-tag...
+logo:                  /assets/icons/icon.png
+
+# This should be the same author as first entry in `_data/authors.yml`.
+# Duplication is necessary due to the `jekyll-feed`, `jekyll-seo-tag` plugin.
+author:
+  name:                Paige McKenzie
+  email:               paigemckenzie@utexas.edu
+  # Used by `jekyll-seo-tag`:
+  twitter:             P_A_McKenzie
+
+# This text will appear in a `<small>` tag in the footer of every page.
+copyright:             © 2018. All rights reserved.
+
+# Format of the permalinks
+permalink:             /:year/:month/:day/:title/
+
+# Pagination configuration (used by the `blog` layout)
+paginate:              5
+paginate_path:         /page-:num/
+excerpt_separator:     <!--more-->
+# Customizaton
+# ========================================================================================
+
+# Sidebar image and theme color of the site.
+accent_image:          /assets/img/sidebar.jpg
+accent_color:          '#00A48B'
+
+# The string encoding which fonts to fetch from Google Fonts.
+# See: <https://qwtel.com/hydejack/docs/configuration/>
+google_fonts:          Raleway:700|Raleway:400,400i,700,700i
+
+# The text font. Expects a string that is a valid CSS font-family value.
+font:                  Noto Sans, Helvetica, Arial, sans-serif
+
+# The font used for headings. Expects a string that is a valid CSS font-family value.
+font_heading:          Roboto Slab, Helvetica, Arial, sans-serif
+
+#the order of the sidebar, hopefully
+defaults:
+  - scope:
+      path: about.md
+    values:
+      menu: true
+      order: 1
+  - scope:
+      path: cats.md
+    values:
+      menu: true
+      order: 2
+  - scope:
+      path: archive.md
+    values:
+      menu: true
+      order: 3
+
+# describe my tags
+custom_tag_description:
+  til:
+    pretty: TIL
+    description: Smaller posts detailing statistical techniques or coding fun facts.
+  descriptive:
+    pretty: Descriptive Analytics
+    description: Posts that detail exploratory analysis.
+  predictive:
+    pretty: Predictive Modelling
+    description: Posts that involve model building and tuning.
+  misc:
+    pretty: Miscellaneous
+    description: Stuff that doesn't fit elsewhere, including but not limited to how-to and data acquisition posts.
+  Python:
+    pretty: Python
+    description: Posts that utilized the Python scripting language.
+  R:
+    pretty: R
+    description: Posts that utilized the R programming language. 
+
+# 3rd Party Integrations
+# ----------------------------------------------------------------------------------------
+
+# Set your Google Analytics id to receive `pageview` events.
+# To remove Google Anaylics from your page, remove the line below.
+google_analytics:      UA-111146646-1
+
+# Setting a disqus shortname will enable the comment section on
+# pages with `comments: true` in the front matter.
+# disqus:                <disqus_shortname>
+
+# Setting a tinyletter username will enable the newsletter subscription box.
+# tinyletter:            <tinyletter_username>
+
+# Hydejack Settings
+# ----------------------------------------------------------------------------------------
+# These settings are specific to Hydejack.
+
+hydejack:
+  # Configure the order of complementary content on blog posts
+  post_addons:         [about, newsletter, related]
+
+  # Configure the order of complementary content on project pages
+  project_addons:      [about, newsletter, other]
+
+  # If you do not use Google Fonts, set to `true`.
+  no_google_fonts:     false
+
+  # Set to `true` if you don't want to show an icon indicating external links
+  no_mark_external:    true
+
+  # Set to `true` if third party plugins fail to work with dynamically loaded pages
+  no_push_state:       true
+
+  # Set to `true` if you want to disable the drawer
+  no_drawer:           false
+
+  # Set to `true` if you do not want parts of the css inlined in <head/>
+  # This *may* be benefitial when serving the site over HTTP/2.
+  no_inline_css:       false
+
+  # Code blocks and tables "break" the layout by spanning the full available width.
+  # Set this to true if you want them to be the same width as other content.
+  no_break_layout:     false
+
+  # Set to `true` if you do not want to expose your resume and projects
+  # in machine-readable formats.
+  no_structured_data:  false
+
+  # You can set this to `true` if you don't want to set the `theme-color` meta tag,
+  # This only affects the meta tag, not the color specified in the app manifest.
+  no_theme_color:      false
+
+  # Set to `true` when building with the `--lsi` option
+  use_lsi:             false
+
+  # When using Google Analytics, set to `true` to display a cookie notice banner.
+  # When enabled, no user-related data will be stored until the user gives consent.
+  cookies_banner:      false
+
+
+# Collections
+# ========================================================================================
+
+collections:
+  featured_categories:
+    permalink:         /category/:name/
+    output:            true
+
+  featured_tags:
+    permalink:         /tag/:name/
+    output:            true
+
+  projects:
+    permalink:         /projects/:path/
+    output:            true
+
+# File inclusion/exclusion
+# ========================================================================================
+
+exclude:
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - package.json
+  - package-lock.json
+include:
+  - LICENSE.md
+
+
+# Plugins and Plugin Configuration
+# ========================================================================================
+
+plugins:
+  # - jekyll-avatar
+  # - jekyll-default-layout
+  - jekyll-feed
+  # - jekyll-gist
+  # - jekyll-optional-front-matter
+  - jekyll-paginate
+  # - jekyll-readme-index
+  # - jekyll-redirect-from
+  - jekyll-relative-links
+  # - jekyll-remote-theme
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  # - jekyll-titles-from-headings
+
+# Theme
+# ---------------------------------------------------------------------------------------
+
+# theme: jekyll-theme-hydejack
+# remote_theme: qwtel/hydejack@gem
+
+# SEO Tag
+# ---------------------------------------------------------------------------------------
+
+# Where you proof that you own this site (used by jekyll-seo-tag)
+# google_site_verification: <verification-id>
+# -- or --
+# webmaster_verifications:
+#   google:              <verification-id>
+#   bing:                <verification-id>
+#   alexa:               <verification-id>
+#   yandex:              <verification-id>
+
+# Used for Twitter cards
+# twitter:
+#   username:            <shortname>
+
+# Used for Facebook open graph
+# facebook:
+#   app_id:              <id>
+#   publisher:           <id>
+#   admins:              <id>
+
+# Used on index and about sites
+# social:
+#   name:                <firstname> <lastname>
+#   links:
+#     - https://twitter.com/<username>
+#     - https://github.com/<username>
+
+
+# Other Plugins
+# ---------------------------------------------------------------------------------------
+
+optional_front_matter:
+  remove_originals:    true
+
+readme_index:
+  remove_originals:    true
+
+relative_links:
+  collections:         true
+
+titles_from_headings:
+  strip_title:         true
+  collections:         true
+
+kramdown:
+  footnote_backlink:   '&#x21a9;&#xfe0e;'
+  math_engine:         mathjax
+  math_engine_opts:
+    preview:           true
+    preview_as_code:   true
+
+compress_html:
+  comments:            ["<!-- ", " -->"]
+  clippings:           all
+  endings:             all
+  ignore:
+    envs:              [development]
+
+sass:
+  style:               compressed
+
+# If you are upgrading form v5 (or earlier), uncomment the lines below,
+# so that the location of the feed XML stays the same.
+# feed:
+#   path:                atom.xml
