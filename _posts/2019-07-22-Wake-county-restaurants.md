@@ -36,7 +36,7 @@ hidden: false
 # Background
 Wake County provides [open data](https://data-wake.opendata.arcgis.com/) for the public to analyze, including
 data on restaurant inspections. 
-I've been meaning to use an open dataset for a while, and decided to start by inventing a prediction problem that would leveragewith
+I've been meaning to use an open dataset for a while, and decided to start by inventing a prediction problem that would leverage
 their open data about restaurants and restaurant inspections in Wake County.
 
 # Scenario
@@ -113,13 +113,13 @@ Looking at `inspections`:
 |1002|4092015443|94.0|2015-09-25 00:00:00+00:00|Follow-Up: 10/05/2015|Inspection|Jennifer Edwards|4768|
 
 Interestingly, only about 97% of the rows in `inspections` can be connected to `restaurants`, and we
-need all the data for modeling, we we'll only retain those that can be linked back to the other tables.
+need all the data for modeling, so we'll only retain those that can be linked back to the other tables.
 ```python
 insp = insp[insp['HSISID'].isin(rest['HSISID'])]
 ```
 
 We're not going to use `violations` beyond a measure of how many violations each inspection found, so the 
-majority of the columns are irrelevant. however, we will perform the same filter as we did for `inspections`, so that
+majority of the columns are irrelevant. However, we will perform the same filter as we used on `inspections`, so that
 all `violations` can be connected to `restaurants`, using `inspections` as a crosswalk.
 ```python
 viol = viol.drop('HSISID', axis=1).join(insp.set_index('PERMITID')['HSISID'].drop_duplicates(),
@@ -133,7 +133,7 @@ is performing more inspections each month.
 Interestingly, we see that each inspection is detecting fewer inspections over time - whether this is due to an actual improvement in
 restaurant cleanliness or change in reporting is open to debate.
 ![]({{site.baseurl}}/assets/img/restaurants/violations_by_month.jpg)
-There is no trend in average inspection `SCORE` over time, leading me to conclude that the change in violations is reporting drift.
+There is no trend in average inspection `SCORE` over time, leading me to think that the change in violations is reporting drift.
 
 # Making predictions
 Imagine it's Christmas break, end of 2018, and we've scheduled restaurant inspections for the first 6 months of 2019. 
@@ -218,7 +218,7 @@ we'll adjust the distribution in training by over-sampling our "at-risk" restaur
 
 ```python
 oversample = 2 # the number of times to include each positive target row
-ratio = .3 # the goal target distribution (# of positive class)
+ratio = .3 # the goal target distribution (% of positive class)
 
 X_neg = X[X['SCORE']<93]
 X_pos = X[X['SCORE']>=93]
@@ -284,7 +284,7 @@ print("Mailing lift:", round(tree_mailing_acc/y_test.mean(), 2))
 > Mailing lift: 3.31
 
 We get about a 3x improvement on our mailing performance (over a random guess) by simply using a decision tree - however, the model
-is overfit judging by the drop-off between train and test AUC, and may not generalize well.
+is over-fit, judging by the drop-off between train and test AUC, and may not generalize well.
 
 ### GridSearch for bagging
 In hopes of combatting overfitting we'll try bagging, which will allow us to build multiple decision trees on different "views" of the 
@@ -390,7 +390,7 @@ y_val.loc[pd.Series(bags.predict_proba(X_val)[:,1], index=X_val.index).nlargest(
 ```
 > 0.412
 
-However, if we used the bagging model that won during modeling, we would've successfully contacted 41% "at-risk" restaurants.
+However, if we used the bagging model that won during modeling, we would've successfully contacted 41% "at-risk" restaurants!
 
 # Code
 Complete code can be found in my Example Projects git [repository](https://github.com/p-mckenzie/example-projects).

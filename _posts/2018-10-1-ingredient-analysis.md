@@ -474,7 +474,7 @@ out (over a month ago) to do.
 A great bonus was building a linear program in Python for the first time (thanks to [PuLP](https://pythonhosted.org/PuLP/)).
 
 Areas to expand this project include adding support for "core" tokens that are bigrams or larger - 
-i.e. treating `bell pepper` as a potential token it its own right. However, I have sunk enough time
+i.e. treating `bell pepper` as a potential token in its own right. However, I have sunk enough time
 into this project and achieved sufficient results to walk away happy, though I would be fascinated
 to see someone else's attempt to expand what I did, and may re-think my decision to walk away later.
 
