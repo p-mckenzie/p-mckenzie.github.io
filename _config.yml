@@ -110,7 +110,7 @@ custom_tag_description:
     pretty: Descriptive Analytics
     description: Posts that detail exploratory analysis.
   predictive:
-    pretty: Predictive Modelling
+    pretty: Predictive Modeling
     description: Posts that involve model building and tuning.
   misc:
     pretty: Miscellaneous
