@@ -3,7 +3,7 @@
 layout: post
 
 # The title of your post
-title: "Car Reviews Analysis"
+title: "Car reviews analysis"
 
 # (Optional) Write a short (~150 characters) description of each blog post.
 # This description is used to preview the page on search engines, social media, etc.
@@ -24,9 +24,6 @@ hide_description: false
 categories: [descriptive]
 tags: [text, scraping]
 languages: [Python]
-
-featured: false
-hidden: false
 ---
 ![]({{site.url}}/assets/img/Edmunds/header.jpg){:.lead}
 

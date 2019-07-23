@@ -1,22 +1,4 @@
-<!--If it's the first page of pagination, include all featured posts-->
-{% if paginator.page == 1 %} 
-	<h1 class="page-title hr featuredpost">
-	Featured Posts
-	</h1>
-	
-	{% for post in site.posts %}
-	{% if post.featured %}
-		{% include post.html post=post link_title=true excerpt=true %}
-	{% endif %}
-	{% endfor %}
-{% endif %}
-
 <!--Include up to 5 non-featured posts-->
-{% if paginator.page == 1 %} 
-<h1 class="page-title hr featuredpost">
-	Newest Posts
-</h1>
-{% endif %}
 {% for post in paginator.posts %}
 	{% include post.html post=post link_title=true excerpt=true %}
 {% endfor %}

@@ -23,9 +23,6 @@ description: >
 categories: [descriptive]
 tags: [text]
 languages: [Python]
-
-featured: false
-hidden: false
 ---
 ![]({{site.url}}/assets/img/Jane Austen/header.png){:.lead}
 

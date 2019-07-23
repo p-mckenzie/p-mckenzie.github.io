@@ -23,9 +23,6 @@ hide_image: false
 categories: [descriptive]
 tags: [scraping]
 languages: [R]
-
-featured: false
-hidden: false
 ---
 ![]({{site.url}}/assets/img/allrecipes-hof/header.png){:.lead}
 

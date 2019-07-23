@@ -3,7 +3,7 @@
 layout: post
 
 # The title of your post
-title: "Instacart Part 2 - Modeling"
+title: "Instacart pt. 2 - Modeling"
 
 # (Optional) Write a short (~150 characters) description of each blog post.
 # This description is used to preview the page on search engines, social media, etc.
@@ -23,9 +23,6 @@ image: /assets/img/instacart/instacart-checkout.jpg
 categories: [predictive]
 tags: []
 languages: [Python]
-
-featured: true
-hidden: true
 ---
 {% include /custom/bokeh_instacart_2.html %}
 ![]({{site.url}}/assets/img/instacart/instacart-checkout.jpg){:.lead}

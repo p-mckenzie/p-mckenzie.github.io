@@ -22,9 +22,6 @@ hide_image: false
 categories: [descriptive]
 tags: [text]
 languages: [Python]
-
-featured: false
-hidden: false
 ---
 ![]({{site.url}}/assets/img/ingredients/header.png){:.lead}
 

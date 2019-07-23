@@ -3,7 +3,7 @@
 layout: post
 
 # The title of your post
-title: "Embedding Bokeh Plots with Github Pages"
+title: "Embedding Bokeh plots with Github Pages"
 
 # (Optional) Write a short (~150 characters) description of each blog post.
 # This description is used to preview the page on search engines, social media, etc.
@@ -23,9 +23,6 @@ description: >
 categories: [misc]
 tags: [how-to]
 languages: [Python]
-
-featured: false
-hidden: false
 ---
 ![](/assets/img/Bokeh/header.PNG){:.lead}
 

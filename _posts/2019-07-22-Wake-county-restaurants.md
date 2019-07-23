@@ -22,9 +22,6 @@ hide_image: false
 categories: [predictive]
 tags: []
 languages: [Python]
-
-featured: false
-hidden: false
 ---
 ![]({{site.url}}/assets/img/restaurants/header.jpg){:.lead}
 

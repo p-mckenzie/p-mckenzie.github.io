@@ -3,7 +3,7 @@
 layout: post
 
 # The title of your post
-title: "Twitter Takes On the Bachelor (Finale)"
+title: "Twitter takes on the Bachelor (finale)"
 
 # (Optional) Write a short (~150 characters) description of each blog post.
 # This description is used to preview the page on search engines, social media, etc.
@@ -23,9 +23,6 @@ hide_image: false
 categories: [descriptive]
 tags: [text]
 languages: [Python]
-
-featured: false
-hidden: false
 ---
 ![]({{site.url}}/assets/img/bachelor-finale/header.jpg){:.lead}
 

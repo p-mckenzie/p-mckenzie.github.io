@@ -3,7 +3,7 @@
 layout: post
 
 # The title of your post
-title: "Instacart Part 1 - Feature Engineering"
+title: "Instacart pt. 1 - Feature Engineering"
 
 # (Optional) Write a short (~150 characters) description of each blog post.
 # This description is used to preview the page on search engines, social media, etc.
@@ -23,9 +23,6 @@ image: /assets/img/instacart/Instacart-delivery.jpg
 categories: [descriptive]
 tags: []
 languages: [Python]
-
-featured: true
-hidden: true
 ---
 {% include /custom/bokeh_instacart_1.html %}
 ![]({{site.url}}/assets/img/instacart/Instacart-delivery.jpg){:.lead}

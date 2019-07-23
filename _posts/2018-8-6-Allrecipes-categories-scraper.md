@@ -3,7 +3,7 @@
 layout: post
 
 # The title of your post
-title: "Demo of Webscraping with Selenium"
+title: "Demo of webscraping with Selenium"
 
 # (Optional) Write a short (~150 characters) description of each blog post.
 # This description is used to preview the page on search engines, social media, etc.
@@ -22,9 +22,6 @@ hide_image: false
 categories: [misc]
 tags: [scraping]
 languages: [Python]
-
-featured: false
-hidden: false
 ---
 ![]({{site.url}}/assets/img/allrecipes-scraper/header.jpg){:.lead}
 
