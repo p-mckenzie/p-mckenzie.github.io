@@ -50,7 +50,7 @@ layout: base
 	  {% if pretty %}
 		<h2 id="{{ tag[0] | slugify }}"> {{ pretty }} </h2>
 	  {% else %}
-		<h2 id="{{ tag[0] | slugify }}"> {{ tag_name }} </h2>
+		{% continue %}
 	  {% endif %}
 	  
 	  {% assign desc = site.custom_tag_description[tag_name].description %}

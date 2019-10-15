@@ -13,13 +13,14 @@
       {% assign post_format = site.data.strings.date_formats.post | default:"%d %b %Y" %}
       {% assign category_start     = site.data.strings.category_start     | default:"Concerning " %}
       {% assign tag_start          = site.data.strings.tag_start          | default:"on " %}
+      {% assign end_with           = site.data.strings.comma              | default:"," %}
       {% assign language_start     = site.data.strings.language_start     | default:", using " %}
       {% assign category_separator = site.data.strings.category_separator | default:", " %}
       {% assign tag_separator      = site.data.strings.tag_separator      | default:", "  %}
       {% assign language_separator = site.data.strings.language_separator | default:", " %}
       
-	  {% include cat-list.html cats=post.categories meta=site.featured_categories start_with=category_start separator=category_separator %}
-	  {% include cat-list.html cats=post.languages meta=site.featured_categories start_with=language_start separator=language_separator %}
+	  {% include cat-list.html cats=post.categories meta=site.featured_categories start_with=category_start separator=category_separator end_with=end_with %}
+	  {% include cat-list.html cats=post.languages meta=site.featured_categories start_with=language_start separator=language_separator%}
 	  
 	  <time datetime="{{ post.date | date_to_xmlschema }}">{{site.data.strings.date_start}} {{ post.date | date:post_format }}</time>
       <div class="tags-expo-list">

@@ -104,22 +104,22 @@ defaults:
 # describe my tags
 custom_tag_description:
   til:
-    pretty: TIL
+    pretty: 'TIL'
     description: Smaller posts detailing statistical techniques or coding fun facts.
   descriptive:
-    pretty: Descriptive Analytics
+    pretty: 'Descriptive Analytics'
     description: Posts that detail exploratory analysis.
   predictive:
-    pretty: Predictive Modeling
+    pretty: 'Predictive Modeling'
     description: Posts that involve model building and tuning.
   misc:
-    pretty: Miscellaneous
+    pretty: 'Miscellaneous'
     description: Stuff that doesn't fit elsewhere, including but not limited to how-to and data acquisition posts.
   Python:
-    pretty: Python
+    pretty: 'Python'
     description: Posts that utilized the Python scripting language.
   R:
-    pretty: R
+    pretty: 'R'
     description: Posts that utilized the R programming language. 
 
 # 3rd Party Integrations

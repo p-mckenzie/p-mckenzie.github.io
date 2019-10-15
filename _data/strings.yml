@@ -57,11 +57,12 @@ error:
 # ---------------------------------------------------------------------------------------
 colon:                 ':'
 separator:             '|'
+comma:                 ','
 category_start:        'Concerning '
 category_separator:    ', '
 tag_start:             'on '
 tag_separator:         ', '
-language_start:        ', using '
+language_start:        'using '
 language_separator:    ', '
 date_start:            'on '
 
