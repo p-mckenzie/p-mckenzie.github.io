@@ -41,6 +41,8 @@ layout: base
   <h2 class="page-title hr">Site</h2>
   {{ site.why | markdownify }}
 
+  {% include trello-link.html %}
+  
   <h2 class="page-title hr">Resume</h2>
   {{ content }}
 </article>
