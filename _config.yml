@@ -47,6 +47,7 @@ keywords:              [data, science, MSBA, UT, Austin, McCombs, Paige, McKenzi
 
 # Used by jekyll-seo-tag...
 logo:                  /assets/icons/icon.png
+image:                 /assets/img/preview.jpg
 
 # This should be the same author as first entry in `_data/authors.yml`.
 # Duplication is necessary due to the `jekyll-feed`, `jekyll-seo-tag` plugin.
