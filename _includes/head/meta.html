@@ -7,7 +7,7 @@
   {% else %}{% include head/seo-fallback.html %}{% endif %}
   
   {% unless page.image %}}
-  <meta name="og:image" content="{{ site.url }}{{ site.image }}">
+  <meta name="image" property="og:image" content="{{ site.url }}{{ site.image }}">
   {% endunless %}
 
   {% if site.keywords or page.keywords %}
