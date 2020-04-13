@@ -6,6 +6,10 @@
 <link rel="shortcut icon" href="{{ '/assets/icons/favicon.ico' | relative_url }}">
 <link rel="apple-touch-icon" href="{{ '/assets/icons/icon.png' | relative_url }}">
 
+{% unless page.image %}}
+  <meta name="image" property="og:image" content="{{ site.url }}/{{ site.image }}">
+  {% endunless %}
+
 <link rel="manifest" href="{{ '/assets/manifest.json' | relative_url }}">
 
 {% unless site.hydejack.no_google_fonts or site.no_google_fonts %}
