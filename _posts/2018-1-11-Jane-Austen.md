@@ -21,7 +21,7 @@ description: >
 # hide_image: true
 
 categories: [descriptive]
-tags: [text]
+tags: []
 languages: [Python]
 ---
 ![]({{site.url}}/assets/img/Jane Austen/header.png){:.lead}

@@ -21,7 +21,7 @@ description: >
 # hide_image: true
 
 categories: [misc]
-tags: [how-to]
+tags: []
 languages: [Python]
 ---
 ![](/assets/img/Bokeh/header.PNG){:.lead}

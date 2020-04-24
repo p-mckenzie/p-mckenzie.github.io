@@ -20,7 +20,7 @@ hide_description: false
 hide_image: false
 
 categories: [misc]
-tags: [scraping]
+tags: []
 languages: [Python]
 ---
 ![]({{site.url}}/assets/img/allrecipes-scraper/header.jpg){:.lead}

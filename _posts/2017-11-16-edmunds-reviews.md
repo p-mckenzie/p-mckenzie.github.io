@@ -22,7 +22,7 @@ hide_description: false
 # hide_image: true
 
 categories: [descriptive]
-tags: [text, scraping]
+tags: []
 languages: [Python]
 ---
 ![]({{site.url}}/assets/img/Edmunds/header.jpg){:.lead}
