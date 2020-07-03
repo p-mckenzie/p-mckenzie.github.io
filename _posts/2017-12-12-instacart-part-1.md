@@ -3,7 +3,7 @@
 layout: post
 
 # The title of your post
-title: "Instacart pt. 1 - Feature Engineering"
+title: "Predicting grocery purchase behavior - pt. 1"
 
 # (Optional) Write a short (~150 characters) description of each blog post.
 # This description is used to preview the page on search engines, social media, etc.
@@ -20,8 +20,8 @@ image: /assets/img/instacart/Instacart-delivery.jpg
 # hide_description: true
 # hide_image: true
 
-categories: [descriptive]
-tags: []
+categories: [predictive]
+tags: [dataviz]
 languages: [Python]
 ---
 {% include /custom/bokeh_instacart_1.html %}
@@ -192,7 +192,3 @@ The full data dictionary along with code to complete the feature analysis can be
 
 # Next Steps
 Now that the data has been manipulated into a useable form, my next post ([part 2]({{site.url}}/2017/12/12/instacart-part-2/ "Instacart Part 2 - Modeling") of my Instacart series), will describe the models I used to learn the user-product relationship.
-
-<br>
-Please note that part of this work was submitted as part of a group project for MIS 382N in the Fall of 2017, but the method, code, and commentary contained/described herein is my own independent work.
-{:.faded}

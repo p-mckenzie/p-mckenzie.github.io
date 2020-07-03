@@ -3,7 +3,7 @@
 layout: post
 
 # The title of your post
-title: "Jane Austen meets VADER"
+title: "Exploring Jane Austen novels with text analysis"
 
 # (Optional) Write a short (~150 characters) description of each blog post.
 # This description is used to preview the page on search engines, social media, etc.
@@ -21,7 +21,7 @@ description: >
 # hide_image: true
 
 categories: [descriptive]
-tags: []
+tags: [text, dataviz]
 languages: [Python]
 ---
 ![]({{site.url}}/assets/img/Jane Austen/header.png){:.lead}
@@ -517,7 +517,7 @@ characters.
 Despite all the measuring, poking, and prodding at the text I did, I leave it up to the reader
 to select their favorite, hopefully after reading the novels rather than just analyzing them.
 
-As for myself, Pride and Prejudice will always be the best in my eyes.
+But for myself, Pride and Prejudice will always remain the favorite.
 
 # Code
 All analysis was completed using Python 2.7, relying primarily on the pandas, re, nltk, and Bokeh libraries. 

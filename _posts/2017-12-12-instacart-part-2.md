@@ -3,13 +3,13 @@
 layout: post
 
 # The title of your post
-title: "Instacart pt. 2 - Modeling"
+title: "Predicting grocery purchase behavior - pt. 2"
 
 # (Optional) Write a short (~150 characters) description of each blog post.
 # This description is used to preview the page on search engines, social media, etc.
 description: >
   A modeling approach to the Instacart Market Basket Analysis, hosted by Kaggle, using engineered features.
-  The second of a 2-part series (part 1 available [here](https://p-mckenzie.github.io/2017/12/12/instacart-part-1/ "Instacart Part 1 - Feature Engineering")).
+  The second of a 2-part series (part 1 available [here](https://p-mckenzie.github.io/2017/12/12/instacart-part-1/)).
 
 # (Optional) Link to an image that represents your blog post.
 # The aspect ratio should be ~16:9.
@@ -21,7 +21,7 @@ image: /assets/img/instacart/instacart-checkout.jpg
 # hide_image: true
 
 categories: [predictive]
-tags: []
+tags: [dataviz]
 languages: [Python]
 ---
 {% include /custom/bokeh_instacart_2.html %}

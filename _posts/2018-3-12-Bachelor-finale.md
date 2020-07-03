@@ -8,7 +8,7 @@ title: "Twitter takes on the Bachelor (finale)"
 # (Optional) Write a short (~150 characters) description of each blog post.
 # This description is used to preview the page on search engines, social media, etc.
 description: >
-  A descriptive analytics look at tweets sent during the Bachelor season 22 (Arie Luyendyk Jr.) 
+  A descriptive analytics look at twitter reactions to the Bachelor season 22 (Arie Luyendyk Jr.) 
   finale and After the Final Rose. **PG-13 post, due to strong language contained in some tweets.**
 
 # (Optional) Link to an image that represents your blog post.
@@ -21,7 +21,7 @@ hide_description: false
 hide_image: false
 
 categories: [descriptive]
-tags: []
+tags: [text]
 languages: [Python]
 ---
 ![]({{site.url}}/assets/img/bachelor-finale/header.jpg){:.lead}
@@ -31,7 +31,7 @@ languages: [Python]
 * dummy list
 {:toc}
 <br>
-For the uneducated, the Bachelor is a television show on ABC that follows one man (the Bachelor) as he
+For those unfamiliar, the Bachelor is a television show on ABC that follows one man (the Bachelor) as he
 dates >20 women, eliminating a few each week, until the finale, when he (usually) proposes to the last woman
 standing. 
 
@@ -39,7 +39,7 @@ Season 22, with bachelor Arie Luyendyk Jr., had rather a dramatic ending, as Ari
 Becca Kufrin, but 2 months later (before the show was finished airing) broke up with her to be with
 the '1st runner-up', Lauren Burnham, but only after checking with Lauren that she would take him back.
 
-ABC decided to broadcast the entirety of the brutal break-up, uncut and unedited, on Monday night.
+ABC decided to broadcast the entirety of the brutal break-up, "uncut and unedited", on Monday night.
 On Tuesday night, Lauren, Arie, and Becca were all reunited on After the Final Rose to address the controversy,
 and Becca was announced as the next Bachelorette (to star on a gender-swapped version of the Bachelor, also produced
 by ABC).
@@ -62,9 +62,6 @@ the tweet has, and stored each tweet as a row in a Pandas dataframe.
 The scraper is available in my example projects GitHub [repo](https://github.com/p-mckenzie/example-projects),
 and can be used with any query to the twitter API (with a few modifications). It nicely parses the tweets
 while waiting for the rate-limit to refresh, saving processing time. 
-
-The twitter API has a limited time window available to look back at, so
-if you want the tweets after the window elapses, feel free to reach out to me.
 
 # Data Cleaning
 As anybody who's used twitter knows, tweets are usually a mess. I decided I was interested in the words used, and 

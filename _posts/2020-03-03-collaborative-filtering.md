@@ -20,7 +20,7 @@ hide_description: false
 hide_image: false
 
 categories: [predictive]
-tags: []
+tags: [business case]
 languages: [Python]
 ---
 ![]({{site.url}}/assets/img/anime/header.png){:.lead}

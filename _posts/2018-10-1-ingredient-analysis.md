@@ -3,7 +3,7 @@
 layout: post
 
 # The title of your post
-title: "How to read a recipe when you're a computer"
+title: "Extracting meaning from text of recipe ingredients"
 
 # (Optional) Write a short (~150 characters) description of each blog post.
 # This description is used to preview the page on search engines, social media, etc.
@@ -20,7 +20,7 @@ hide_description: false
 hide_image: false
 
 categories: [descriptive]
-tags: []
+tags: [text, algorithms]
 languages: [Python]
 ---
 ![]({{site.url}}/assets/img/ingredients/header.png){:.lead}
@@ -32,9 +32,10 @@ languages: [Python]
 
 # Background
 A few months ago, I wrote my [first post using R]({{site.url}}/2018/02/23/allrecipes-hall-of-fame/), 
-which performed a basic analysis on data scraped from [Allrecipes.com](http://www.allrecipes.com). 
-Since then I've been meaning to apply some natural language processing to the ingredients
-of each recipe, but I also wanted a challenge. 
+which performed a basic analysis on data scraped from [Allrecipes.com](http://www.allrecipes.com). At
+the time, I wanted to group recipes by their ingredients, but found it difficult due to the way
+Allrecipes formats each recipe's ingredient list. 
+So I set myself the challenge of extracting the **core** of each ingredient description.
 
 **The Problem:** 
 > Determine each ingredient's **core** without supervision
@@ -46,8 +47,8 @@ of each recipe, but I also wanted a challenge.
 **Simplifying Assumptions:** 
 > * Each ingredient can be represented by a single word
 
-Unfortunately the simplifying assumption means that `pepper, to taste` and `1 green bell pepper, 
-diced` will both be associated with the same core of `pepper`, but I found that to make 
+Unfortunately the simplifying assumption means that `pepper, to taste` and `1 green bell pepper, diced` 
+will both be associated with the same core of `pepper`, but I found that to make 
 an incredible difference in helping lower the problem's difficulty.
 
 This is similar to a "most representative subset" problem.
@@ -344,28 +345,23 @@ was no longer designated a "core" token, that didn't sound very appealing, and a
 end of the day I still wanted a single, most probable "core" for every ingredient.
 
 # Second Approach (moderate success)
-Rather than an LP, I "invented" my own method:
-1. assign each token a "score" based on similar factors to `penalties(**args)`
-2. for each ingredient, randomly draw a "core" token from distribution approximated by that ingredient's tokens' scores
-3. update "scores" based on how often each token is selected as "core"
+Rather than an LP, I designed my own method:
+1. assign each token a "score" representing its likelihood of being **core**, based on similar factors to `penalties(**args)`
+2. for each ingredient, choose the most token with highest "score" to represent the overall ingredient
+3. update each token's "score" based on how frequently each is selected as **core**
 4. repeat 3. until desired spread of "scores" is achieved
 
 <br>
 
-The logic here: what we ultimately want is to separate the true "core" tokens (like `egg`) from 
-those that are not representative of the ingredients that contain them (like `fried`).
-
-We are taking advantage of the fact (or rather, assumption) that no "core" token appears with another "core" 
-token in the same ingredient.
-
-For example:
-* Because `egg` (and other ingredient tokens like it) will be very frequent, and will appear occasionally
-with other tokens (perhaps `scrambled` or `yolks`), this method will force these extra tokens
-to have lower "scores" while promoting `egg`. 
+**Why would this work?**
+* Because `egg` (or any other token) will be frequent, sometimes appearing by itself (as in `1 egg`),
+but will also occasionally appear with other tokens (perhaps `scrambled`, `yolks`, or `fried`). This method will gradually promote
+*egg*'s score, while gradually decreasing the score of other tokens. 
 * Moreover, because these other tokens have been penalized, this will promote tokens they appear
-in association with (probably other true "core" ingredients).
+in association with (learning that `rice` should be the **core** of `fried rice`, because `fried` is *not* the core of `2 fried eggs`.
 * Theoretically, this self-reinforcing cycle will produce better results than simply assigning
 a penalty once and hoping the IP can decide for us.
+
 
 ## Inputs
 Scores are calculated in much the same way that `penalties(**args)` produced penalties. 
@@ -384,7 +380,7 @@ I forced a few seeds for the first iteration:
 This code is also omitted, but simply updates the results of `scores(**args)`.
 
 The distribution of scores looks like:
-![]({{site.url}}/assets/img/ingredients/initial.PNG)
+<img src="{{site.url}}/assets/img/ingredients/initial.PNG" height="250">
 
 We now want to force a greater dispersion.
 

@@ -3,7 +3,7 @@
 layout: post
 
 # The title of your post
-title: "Car reviews analysis"
+title: "Measuring brand perception using online reviews"
 
 # (Optional) Write a short (~150 characters) description of each blog post.
 # This description is used to preview the page on search engines, social media, etc.
@@ -22,7 +22,7 @@ hide_description: false
 # hide_image: true
 
 categories: [descriptive]
-tags: []
+tags: [text, dataviz]
 languages: [Python]
 ---
 ![]({{site.url}}/assets/img/Edmunds/header.jpg){:.lead}

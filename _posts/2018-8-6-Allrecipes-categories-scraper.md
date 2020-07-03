@@ -3,7 +3,7 @@
 layout: post
 
 # The title of your post
-title: "Demo of webscraping with Selenium"
+title: "Webscraping 101 with Selenium"
 
 # (Optional) Write a short (~150 characters) description of each blog post.
 # This description is used to preview the page on search engines, social media, etc.
@@ -20,7 +20,7 @@ hide_description: false
 hide_image: false
 
 categories: [misc]
-tags: []
+tags: [webscraping, how-to]
 languages: [Python]
 ---
 ![]({{site.url}}/assets/img/allrecipes-scraper/header.jpg){:.lead}
@@ -38,7 +38,7 @@ wants a working Selenium example with explanations.
 
 # Selenium Basics
 [Selenium](https://www.seleniumhq.org/) is a tool that opens and controls a web browser 
-programatically, and is highly useful for automatic repetitive and potentially time-consuming tasks,
+programatically, and is highly useful for automating repetitive and potentially time-consuming tasks,
 like downloading documents or filling out a timesheet. In this example, I'll use Selenium to 
 repeatedly open webpages and acquire the information in the HTML of each page.
 

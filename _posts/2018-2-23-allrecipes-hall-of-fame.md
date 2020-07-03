@@ -21,7 +21,7 @@ hide_description: false
 hide_image: false
 
 categories: [descriptive]
-tags: []
+tags: [webscraping]
 languages: [R]
 ---
 ![]({{site.url}}/assets/img/allrecipes-hof/header.png){:.lead}
@@ -436,10 +436,6 @@ Apparently, the most generic submitter description would be "this is a great rec
 to make, and delicious". Also there's a very clear split here between
 the highly frequent words (recipe, make, great), and the remaining
 words.
-
-# Wrap-up
-I enjoyed this project immensely, and will be writing a follow-up post analyzing a larger set of recipes,
-using clustering techniques on recipe ingredients, so stay tuned!
 
 # Code
 The data scraping was with Python 3.5.1 and Selenium 3.6.0, using Chromedriver 2.35 for Windows.
