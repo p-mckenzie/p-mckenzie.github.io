@@ -32,7 +32,7 @@ description:           >
 
 # A shorter description for the sidebar.
 tagline:               >
-  A collection of data science projects
+  A collection of software projects
   by a graduate from UT Austin.
 
 # description used in About page
@@ -43,7 +43,7 @@ why:               >
   each with the goal of learning a new package, trying a new algorithm, or using a new API.
   Creating these posts helps motivate me to better document/comment my code, and to make my analyses repeatable.
 # A list of keywords for your blog
-keywords:              [data, science, MSBA, UT, Austin, McCombs, Paige, McKenzie]
+keywords:              [data, science, MSBA, UT, Austin, McCombs, Paige, McKenzie, software, engineering, computer, CS]
 
 # Used by jekyll-seo-tag...
 logo:                  /assets/icons/icon.png
