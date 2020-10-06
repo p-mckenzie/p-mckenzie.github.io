@@ -8,7 +8,7 @@ title: "Unbeatable tic-tac-toe with Pygame"
 # (Optional) Write a short (~150 characters) description of each blog post.
 # This description is used to preview the page on search engines, social media, etc.
 description: >
-  Programming AI to play perfect (win or draw) tic-tac-toe against a user,
+  Programming an AI to play perfect (win or draw) tic-tac-toe against a user,
   either via command line or a user interface built with Pygame.
 
 # (Optional) Link to an image that represents your blog post.
@@ -35,6 +35,10 @@ languages: [Python]
 Tic-tac-toe is a game for 2 players, X and O, who take turns selecting positions on a 3x3 board. 
 To win, one player must manage to place three of their marks in a row, either horizontally, vertically, or diagonally. 
 
+![]({{site.url}}/assets/img/tic-tac-toe/example.png)
+In this example, player O has won, as they have marked 3 of their symbols along the top row.
+
+## Goals
 In this post, I'll program an AI with the [logic](https://en.wikipedia.org/wiki/Tic-tac-toe#Strategy) for playing a perfect game,
 so the user playing against the computer can do no better than draw.
 
@@ -124,8 +128,9 @@ Code for the pygame version has been omitted due to complexity, and my desire to
 rather than the UI design process.
 
 ## Is the game over?
-The game should end when when one player has won (managed to mark 3 locations in a row), or there is a draw (neither
-player has won, but all locations have been marked).
+After making the most recent move, we have to check if the next player gets a turn.
+The game should end when when one player has won (managed to mark 3 locations in a row), 
+or there is a draw (neither player has won, but all locations have been marked).
 
 I'll check horizontal and vertical by iterating through the rows & columns, then check both the right and left diagonals.
 If someone has won, I'll track the winner and how they won (vertical, horizontal, or diagonal). 
@@ -148,9 +153,16 @@ class TicTacToe():
         # check diagonal
         if abs((self.board * np.identity(3)).sum())==3 or abs((self.board * np.identity(3)[::-1]).sum())==3:
             self.winner = self.user
-            self.how = 'horizontal'
+            self.how = 'diagonal'
             return True
-           
+        ...
+```
+Lastly, if nobody has won, but there are no unfilled locations left, then the game should also end
+as a draw.
+```python   
+class TicTacToe():
+    def is_game_finished(self):
+        ...
         # is there empty space left?
         if ~(self.board==0).max():
             self.winner = 0
@@ -160,7 +172,6 @@ class TicTacToe():
             # continue the game
             return False
 ```
-Lastly, if nobody has won, but there are no unfilled locations left, then the game should also end.
 
 # Optimal strategy for the AI
 Now we have the base game flow built out, except for the opponent logic. Here, I'll be implementing the perfect strategy
@@ -171,7 +182,7 @@ by choosing the first available option from the following prioritized list:
 2. **Block:** If the opponent has two in a row, the player must play the third themselves to block the opponent.
 3. **Fork:** Create an opportunity where the player has two ways to win (two non-blocked lines of 2).
 4. **Block the opponent's fork:** Prevent the opponent from achieving two non-blocked lines of 2.
-5. **Center:** A player marks the center. (If it is the first move of the game, playing a corner move gives the second player more opportunities to make a mistake and may therefore be the better choice; however, it makes no difference between perfect players.)
+5. **Center:** A player marks the center. 
 6. **Opposite corner:** If the opponent is in the corner, the player plays the opposite corner.
 7. **Empty corner:** The player plays in a corner square.
 8. **Empty side:** The player plays in a middle square on any of the 4 sides.
@@ -231,8 +242,8 @@ class TicTacToe():
 A "fork" is an opportunity for one player to create two lines of two at once, thereby winning, as their opponent can
 only block one line with their turn.
 
-For an example of what this would look like, imagine a game where player X goes first. After 2 turns each, its once again
-player X's turn, and they players have created this layout:
+For an example of what this would look like, imagine a game where player X goes first. After 2 turns each, it is once again
+player X's turn, and the players have created this layout:
 
 | |O| |
 | |O|X|
@@ -246,11 +257,15 @@ On their 3rd turn, player X could mark the bottom right, creating this:
 
 Now, it is player O's 3rd turn, but they can only block one of the lines of two - marking either top right, or bottom left - 
 and so player O will lose. Clearly, player O should not have allowed it to get this far, and should have marked the bottom
-right before player X could do so. 
+right before player X could do so.
 
 Logically, if the opponent has marked a single position on both of two adjacent sides and
 no other positions on the sides are marked, the current player should mark the corner between the sides to prevent 
-their opponent from creating a fork.
+their opponent from creating a fork. In our example, O should have marked the underlined location:
+
+| | | |
+| |O|X|
+| |X|_|
 
 The one exception to this is if the opponent has marked opposite diagonals, like this:
 
@@ -297,7 +312,7 @@ the computer is going to choose an empty space from the following set of logic:
 * Lastly, mark any **empty side**.
 
 ## Performance
-I used a random number generator to simulate a wide variety of strategies for the user, player X, to see how the computer,
+I ran Monte Carlo simulations to create a wide variety of random strategies for the user, player X, to see how the computer,
 player O, would respond. Sure enough, after running 100,000 random games, the computer didn't lose once, and was able to 
 win 84.7% of the games.
 
