@@ -47,7 +47,7 @@ package.
 
 # Base game
 The game itself is relatively straightforward, as a single game only needs to maintain the board,
-remember what selections have been made by which user, and input from either player to update the board.
+remember what selections have been made by which user, and accept input from either player to update the board.
 
 I'll use a numpy array to hold the 3x3 board, using a 0 to denote the location has yet to be marked,
 1 to denote that player X has marked the location, and -1 to denote that player O has selected it. 
