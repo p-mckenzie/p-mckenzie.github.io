@@ -3,7 +3,7 @@
 layout: post
 
 # The title of your post
-title: "Unbeatable tic-tac-toe with Pygame"
+title: "Unbeatable tic-tac-toe with Pygame - pt. 1"
 
 # (Optional) Write a short (~150 characters) description of each blog post.
 # This description is used to preview the page on search engines, social media, etc.
