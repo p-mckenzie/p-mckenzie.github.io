@@ -397,35 +397,35 @@ Earlier, I mentioned using the Federalist Papers and recipe descriptions as my e
 
 Here are 3 sentences built with either 1-word, 2-word, or 3-word Markov chains, all with a random seed of 1:
 
-## Recipe descriptions, 1-word:
-1. Serve with 1 day and beer, chinese lemon juice, or chicken stock and placed in our coconut, specifically request from thailand.
-2. Cook at a delicious soup are great with lemon on hand.
-3. Some amazing pizza would not for the best melt well in canned corn and potlucks, but made as many different.
+**Recipe descriptions, 1-word:**
+1. `Serve with 1 day and beer, chinese lemon juice, or chicken stock and placed in our coconut, specifically request from thailand.`
+2. `Cook at a delicious soup are great with lemon on hand.`
+3. `Some amazing pizza would not for the best melt well in canned corn and potlucks, but made as many different.`
 
-## Recipe descriptions, 2-word:
-1. Serve with a gingersnap crust.
-2. I hate cooking.
-3. Serve with basmati rice ahead.
+**Recipe descriptions, 2-word:**
+1. `Serve with a gingersnap crust.`
+2. `I hate cooking.`
+3. `Serve with basmati rice ahead.`
 
-## Recipe descriptions, 3-word:
-1. Serve with a fresh cream cheese dill spread and tomatoes and lettuce on toasty french bread, if desired.
-2. Baked with butter.
-3. Thai style chicken dish with sun-dried tomatoes, spinach, cheeses and spices is sealed inside wrappers, then baked hot and fresh.
+**Recipe descriptions, 3-word:**
+1. `Serve with a fresh cream cheese dill spread and tomatoes and lettuce on toasty french bread, if desired.`
+2. `Baked with butter.`
+3. `Thai style chicken dish with sun-dried tomatoes, spinach, cheeses and spices is sealed inside wrappers, then baked hot and fresh.`
 
-## Federalist Papers, 1-word:
-1. If there an efficient government because in one moment that no.
-2. It will all the latter it, as to us from the states which at a defense.
-3. The latter within the press, that there are supported these qualities, there are liable to defray from both abroad.
+**Federalist Papers, 1-word:**
+1. `If there an efficient government because in one moment that no.`
+2. `It will all the latter it, as to us from the states which at a defense.`
+3. `The latter within the press, that there are supported these qualities, there are liable to defray from both abroad.`
 
-## Federalist Papers, 2-word:
-1. If there are such things as political axioms, the propriety of a previous adoption, as the constitution has supplied a material omission in the articles of confederation.
-2. The latter within the limits of their duty but this stern virtue is the growth of few soils and in the one case as to the order of society, and have occasioned an almost universal prostration of morals.
-3. Experience, and would essentially embarrass its measures.
+**Federalist Papers, 2-word:**
+1. `If there are such things as political axioms, the propriety of a previous adoption, as the constitution has supplied a material omission in the articles of confederation.`
+2. `The latter within the limits of their duty but this stern virtue is the growth of few soils and in the one case as to the order of society, and have occasioned an almost universal prostration of morals.`
+3. `Experience, and would essentially embarrass its measures.`
 
-## Federalist Papers, 3-word:
-1. If there are such things as political axioms, the propriety of a previous adoption, as the constitution has supplied a material omission in the articles of confederation.
-2. The latter within the limits of their duty but this stern virtue is the growth of few soils and in the one case as to the order of society, and have occasioned an almost universal prostration of morals.
-3. Several departments, is not among the vices of their constitution.
+**Federalist Papers, 3-word:**
+1. `If there are such things as political axioms, the propriety of a previous adoption, as the constitution has supplied a material omission in the articles of confederation.`
+2. `The latter within the limits of their duty but this stern virtue is the growth of few soils and in the one case as to the order of society, and have occasioned an almost universal prostration of morals.`
+3. `Several departments, is not among the vices of their constitution.`
 
 ## Comments
 The difference in vocabulary is striking. 
