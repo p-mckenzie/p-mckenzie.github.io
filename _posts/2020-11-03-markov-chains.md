@@ -9,7 +9,7 @@ title: "Markov chains for text generation"
 # This description is used to preview the page on search engines, social media, etc.
 description: >
   Generating believable sentences using Markov chains, based on input text on different topics
-  and in different styles
+  and in different styles.
 
 # (Optional) Link to an image that represents your blog post.
 # The aspect ratio should be ~16:9.
@@ -20,8 +20,8 @@ image: /assets/img/markov/header.png
 # hide_description: true
 # hide_image: true
 
-categories: [misc]
-tags: [algorithms]
+categories: [software]
+tags: [text, algorithms]
 languages: [Python]
 ---
 ![]({{site.url}}/assets/img/markov/header.png){:.lead}
@@ -34,7 +34,8 @@ languages: [Python]
 # Overview
 In this post, I'll use Markov chains to generate text similar to a training corpus. 
 
-> All code is contained in `generate_sentences.py` [here](), and can be used with 
+> All code is contained in `generate_sentences.py` in my [software-examples](https://github.com/p-mckenzie/software-examples) 
+repository, and can be used with 
 any input .txt to generate similar sentences based on a Markov chain of any size.
 
 # Markov chains
@@ -43,7 +44,7 @@ say you're spending your afternoon at home. Currently, you're watching Netflix, 
 you could go walk your dog, or read a book instead. Visually,
 we could represent these "states" like this:
 
-![]({{site.url}}/assets/img/markov/couch_example.png)
+![]({{site.url}}/assets/img/markov/couch_example.PNG)
 
 Notice that the connecting lines imply we can transfer from any one state to any other - going
 straight from walking the dog to reading a book, for example. 
@@ -63,7 +64,7 @@ Fundamentally, imagine building a sentence. You start with the first word, say `
 chain, we can represent `the` as our current "state," and the next word would be any state we could
 move to next. 
 
-![]({{site.url}}/assets/img/markov/cat_example.png)
+![]({{site.url}}/assets/img/markov/cat_example.PNG)
 
 In this example, we could be referring to `the cat`, `the person`, or `the house`, with differing
 probabilities of each (60%, 30%, and 10%, respectively). 
@@ -136,6 +137,8 @@ For my examples, however, I'll specifically use two files:
 
 1. The Federalist Papers
 2. Submitter descriptions for recipes on Allrecipes.com
+
+<br/>
 
 Markov chains fit to the first will generate sentences that sound like Hamilton, Madison and Jay
 supporting the ratification of the US Constitution. They will be more verbose, and use more
@@ -210,9 +213,10 @@ def make_dictionaries(file_dir, m=2):
 
 ## Data structures
 Say the user wants to generate text based on a Markov chain that considers 2 words when choosing 
-the next. I'm storing this user-supplied parameter `-m`, or `--markovsize`.
+the next word. I'm storing this user-supplied parameter `-m`, or `--markovsize`, as `m`, and it defaults
+to 2.
 
-I'll need a different data structure to generate:
+To actually generate text like this, I'll need different data structuresfor:
 1. The first word of a sentence
 2. The second word of a sentence
 3. The 3rd and any subsequent words of a sentence
@@ -239,7 +243,7 @@ def make_dictionaries(file_dir, m=2):
     data_structs[0] = data_structs[0] / data_structs[0].sum()
 ```
 
-This data structure, `first`, is a [pandas](https://pandas.pydata.org/) Series, with 
+This data structure is a [pandas](https://pandas.pydata.org/) Series, with 
 index the word and value the probability. Let's
 revisit our minimal example from earlier:
 
@@ -258,7 +262,7 @@ In this case, `first` would look like:
 |my|0.25|
 
 This indicates our three options for a first word, how likely each is. 
-The Markov chain will randomly draw a first word from this distribution.
+When we start generating sentences, we'll randomly draw from this probability distribution.
 
 ### Second word
 Now, we want to build a data structure to power a Markov chain that considers one word when choosing 
@@ -273,8 +277,9 @@ def make_dictionaries(file_dir, m=2):
 ```
 We've now "fit" the [CountVectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html)
 to our data, or rather taught it what words are available. 
-Some important things to note - the `ngram_range`! When I call `vect.fit(df)`, I'm asking the 
-CountVectorizer to "learn" what pairs exist (for example, `the cat`, `cat ran`, and `ran down`). 
+
+Really important to note - `ngram_range=2`. When I call `vect.fit(df)`, I'm asking the 
+CountVectorizer to "learn" what word pairs exist (for example, `the cat`, `cat ran`, and `ran down`). 
 When I call `vect.transform(df)`, it will tell me how many of each pair exists in each sentence,
 but all I care about is how many of each pair exist overall, so I'll just sum it up and stick
 the frequencies in a pandas Series, `pairs`.
@@ -283,6 +288,7 @@ the frequencies in a pandas Series, `pairs`.
 def make_dictionaries(file_dir, m=2):
     ...
     for i in range(1, m+1):
+        ...
         # get occurrences out of vect
         pairs = pd.Series(np.asarray(vect.transform(df).sum(axis=0)).reshape(-1),
                   index=vect.get_feature_names(), name='freq')
@@ -304,6 +310,7 @@ and get probabilities for each different response option.
 def make_dictionaries(file_dir, m=2):
     ...
     for i in range(1, m+1):
+        ...
         # expand to 2 columns (prompt, response)
         pairs = pairs.reset_index()
         pairs = pd.concat([pairs['tokens'].str.rsplit(n=1, expand=True).rename(columns={0:'prompt', 1:'response'}),
@@ -390,32 +397,32 @@ Earlier, I mentioned using the Federalist Papers and recipe descriptions as my e
 
 Here are 3 sentences built with either 1-word, 2-word, or 3-word Markov chains, all with a random seed of 1:
 
-Recipe descriptions, 1-word:
+## Recipe descriptions, 1-word:
 1. Serve with 1 day and beer, chinese lemon juice, or chicken stock and placed in our coconut, specifically request from thailand.
 2. Cook at a delicious soup are great with lemon on hand.
 3. Some amazing pizza would not for the best melt well in canned corn and potlucks, but made as many different.
 
-Recipe descriptions, 2-word:
+## Recipe descriptions, 2-word:
 1. Serve with a gingersnap crust.
 2. I hate cooking.
 3. Serve with basmati rice ahead.
 
-Recipe descriptions, 3-word:
+## Recipe descriptions, 3-word:
 1. Serve with a fresh cream cheese dill spread and tomatoes and lettuce on toasty french bread, if desired.
 2. Baked with butter.
 3. Thai style chicken dish with sun-dried tomatoes, spinach, cheeses and spices is sealed inside wrappers, then baked hot and fresh.
 
-Federalist Papers, 1-word:
+## Federalist Papers, 1-word:
 1. If there an efficient government because in one moment that no.
 2. It will all the latter it, as to us from the states which at a defense.
 3. The latter within the press, that there are supported these qualities, there are liable to defray from both abroad.
 
-Federalist Papers, 2-word:
+## Federalist Papers, 2-word:
 1. If there are such things as political axioms, the propriety of a previous adoption, as the constitution has supplied a material omission in the articles of confederation.
 2. The latter within the limits of their duty but this stern virtue is the growth of few soils and in the one case as to the order of society, and have occasioned an almost universal prostration of morals.
 3. Experience, and would essentially embarrass its measures.
 
-Federalist Papers, 3-word:
+## Federalist Papers, 3-word:
 1. If there are such things as political axioms, the propriety of a previous adoption, as the constitution has supplied a material omission in the articles of confederation.
 2. The latter within the limits of their duty but this stern virtue is the growth of few soils and in the one case as to the order of society, and have occasioned an almost universal prostration of morals.
 3. Several departments, is not among the vices of their constitution.
@@ -440,3 +447,19 @@ being overly constrained to the point of duplicating sentences in the training t
 # Code
 The full code is available in `generate_sentences.py` in my [software-examples](https://github.com/p-mckenzie/software-examples) 
 repository.
+
+`generate_sentences.py` usage:
+
+```
+--filename FILENAME, -f FILENAME
+                    Path to raw .txt file. If none is provided, defaults
+                    to most recently-created dictionaries.
+--simulations SIMULATIONS, -s SIMULATIONS
+                    the # of random sentences to build, defaults to 10
+--markovsize MARKOVSIZE, -m MARKOVSIZE
+                    the # of tokens to consider when building sentences,
+                    defaults to 2
+--randomseed RANDOMSEED, -r RANDOMSEED
+                    the random seed to use when building sentences,
+                    defaults to 1
+```

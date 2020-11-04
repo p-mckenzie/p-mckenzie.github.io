@@ -20,7 +20,7 @@ image: /assets/img/tic-tac-toe/header.jpg
 # hide_description: true
 # hide_image: true
 
-categories: [misc]
+categories: [software]
 tags: [algorithms]
 languages: [Python]
 ---
