@@ -122,6 +122,10 @@ custom_tag_description:
   R:
     pretty: 'R'
     description: Posts that utilized the R programming language. 
+  software:
+    pretty: 'Software'
+    description: Posts not centered around data science, including but not limited to algorithms and user interface design.
+
 
 # 3rd Party Integrations
 # ----------------------------------------------------------------------------------------
