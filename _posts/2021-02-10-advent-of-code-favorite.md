@@ -167,7 +167,7 @@ each adapter configuration, checking if it's valid. The compute time for a large
 Instead, with this method, we can sort the adapters at the start, and visit each once, simply checking what other
 adapters are "within reach". 
 
-<img src="{{site.url}}/assets/img/AoC2020/directions.GIF" height="140">
+<img src="{{site.url}}/assets/img/AoC2020/directions.gif" height="140">
 
 Fewer calculations, and a simple running sum to take a complicated problem
 to a simple, elegant one.
