@@ -300,7 +300,7 @@ was an incredibly fun problem. Luckily, my input bus IDs were all prime, which e
 mathematical shortcut.
 
 Seeing the search space decrease so rapidly is incredibly satisfying.
-<img src="{{site.url}}/assets/img/AoC2020/satisfying.GIF" height="140">
+<img src="{{site.url}}/assets/img/AoC2020/satisfying.gif" height="140">
 
 
 # Day 23 - linked list
@@ -319,11 +319,11 @@ For example, the starting layout
 `389125467` indicates 10 cups, starting with the cup labeled `3`, arranged clockwise in a circle.
 
 The `current cup` is `3`, and we remove the 3 cups immediately clockwise of it:
-<img src="{{site.url}}/assets/img/AoC2020/cups1.PNG" height="250">
+<img src="{{site.url}}/assets/img/AoC2020/cups1.png" height="250">
 
 We find the `destination cup` by looking for `current cup - 1`, which is cup `2`. We then complete
 the circle by inserting the removed cups immediately clockwise of the `destination cup`:
-<img src="{{site.url}}/assets/img/AoC2020/cups2.PNG" height="250">
+<img src="{{site.url}}/assets/img/AoC2020/cups2.png" height="250">
 
 Lastly, find the cup immediately clockwise of the `current cup`, and use it as the `current cup` for the next round.
 
@@ -352,7 +352,7 @@ In our example from earlier, `389125467`, `order[3] = 8`, `order[8] = 9`, etc. I
 
 Now, remember that each round, we remove then relocate 3 cups, maintaining their order? 
 
-<img src="{{site.url}}/assets/img/AoC2020/cups2_small.PNG" height="250">
+<img src="{{site.url}}/assets/img/AoC2020/cups2_small.png" height="250">
 
 With the linked list implementation, we only need to update 3 things:
 1. Close the "gap" where the 3 cups were removed (connecting `cups[3] = 2`)
@@ -419,7 +419,7 @@ update (or re-build) each round with the new cup order. Since the majority of th
 don't change, there is no reason to dramatically overhaul the data structure each time. With 3 simple 
 updates to a dictionary, we can represent the structural changes as we remove and insert cups each round.
 
-<img src="{{site.url}}/assets/img/AoC2020/short.GIF" height="180">
+<img src="{{site.url}}/assets/img/AoC2020/short.gif" height="180">
 
 Despite the initial complexity of the problem, the code to implement (once I figured out the shortcut) 
 was short and sweet. This was my favorite challenge implementation of the whole month of programming problems, thanks to 
