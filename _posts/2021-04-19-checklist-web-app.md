@@ -13,7 +13,7 @@ description: >
 
 # (Optional) Link to an image that represents your blog post.
 # The aspect ratio should be ~16:9.
-image: /assets/img/AoC2020/header.jpg
+image: /assets/img/checklist/header.png
 
 # You can hide the description and/or image from the output
 # (only visible to search engines) by setting:
@@ -24,7 +24,7 @@ categories: [software]
 tags: []
 languages: [Python]
 ---
-![]({{site.url}}/assets/img/checklist/header.PNG){:.lead}
+![]({{site.url}}/assets/img/checklist/header.png){:.lead}
 
 <!--more-->
 
@@ -231,13 +231,13 @@ or not.
 
 A user who is not logged in has two options: to [log in]({{page.url}}#log-in) or to [register]({{page.url}}#register).
 
-![]({{site.url}}/assets/img/checklist/logged_out_routes.PNG)
+![]({{site.url}}/assets/img/checklist/logged_out_routes.png)
 
 A user who is logged in has more options: to mark a task as [complete]({{page.url}}#complete-task), to create a [new task]({{page.url}}#new-task), 
 [edit]({{page.url}}#edit-task) an existing task, to manage their [account]({{page.url}}#manage-account), 
 or to [log out]({{page.url}}#log-out).
 
-![]({{site.url}}/assets/img/checklist/logged_in_routes.PNG)
+![]({{site.url}}/assets/img/checklist/logged_in_routes.png)
 
 ### Register
 First off, any new user will need to be able to create an account. This route will be stored at /register,
