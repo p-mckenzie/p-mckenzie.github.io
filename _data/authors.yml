@@ -9,11 +9,11 @@ author1:
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about:             |
-    My name is Paige McKenzie, and I am a Data Scientist at [NetApp](https://www.netapp.com/us/index.aspx). I hold a Master of Science in Business Analytics from the University of Texas at Austin.
+    My name is Paige McKenzie, and I write code for [Shopify](https://www.shopify.com/). I hold a Master of Science in Business Analytics from the University of Texas at Austin.
     
-    I've been coding for more than 5 years, primarily in Python but dabbling in R, Java, and C. 
-    While my main area of expertise is data analytics, I love learning new things and am interested
-    in algorithms, web development, and game development! 
+    I've been coding for more than 7 years, primarily in Python but dabbling in R & Java. 
+    While my main area of expertise is data analytics, I'm currently learning backend development
+    in Ruby on Rails. 
     
     This website is dedicated to recording my personal projects as I play with new languages, 
     packages, APIs, or algorithms.
