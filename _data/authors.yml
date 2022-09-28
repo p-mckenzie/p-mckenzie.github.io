@@ -4,12 +4,12 @@
 author1:
   # Replace <...> with your own (remove the < >)
   name:              Paige McKenzie
-  email:             paigemckenzie@utexas.edu
+  email:             paige.a.mckenzie@gmail.com
 
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about:             |
-    My name is Paige McKenzie, and I write code for [Shopify](https://www.shopify.com/). I hold a Master of Science in Business Analytics from the University of Texas at Austin.
+    My name is Paige McKenzie, and I write code for [Stitch Fix](https://www.stitchfix.com/). I hold a Master of Science in Business Analytics from the University of Texas at Austin.
     
     I've been coding for more than 7 years, primarily in Python but dabbling in R & Java. 
     While my main area of expertise is data analytics, I'm currently learning backend development
@@ -32,7 +32,7 @@ author1:
     twitter:         P_A_McKenzie
     github:          p-mckenzie
     #download:        https://github.com/qwtel/hydejack-starter-kit/archive/master.zip
-    email:           mailto:<paigemckenzie@utexas.edu>
+    email:           mailto:<paige.a.mckenzie@gmail.com>
     # rss:             https://<url>/feed.xml
     # facebook:        <username>
     # google:          <number>

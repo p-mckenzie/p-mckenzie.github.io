@@ -53,7 +53,7 @@ image:                 assets/img/preview.jpg
 # Duplication is necessary due to the `jekyll-feed`, `jekyll-seo-tag` plugin.
 author:
   name:                Paige McKenzie
-  email:               paigemckenzie@utexas.edu
+  email:               paige.a.mckenzie@gmail.com
   # Used by `jekyll-seo-tag`:
   twitter:             P_A_McKenzie
 
